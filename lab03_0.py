@@ -76,10 +76,10 @@ if __name__ == '__main__':
         u1[j * ny] = res_f(j * step_x, 0)
         u1[(j + 1) * ny - 1] = res_f(j * step_x, jy - step_y)
     for i in range(1, ny - 1):
-        u0[i] = res_f(0, i * step_y);
-        u0[(nx - 1) * ny + i] = res_f(ix - step_x, i * step_y);
-        u1[i] = res_f(0, i * step_y);
-        u1[(nx - 1) * ny + i] = res_f(ix - step_x, i * step_y);
+        u0[i] = res_f(0, i * step_y)
+        u0[(nx - 1) * ny + i] = res_f(ix - step_x, i * step_y)
+        u1[i] = res_f(0, i * step_y)
+        u1[(nx - 1) * ny + i] = res_f(ix - step_x, i * step_y)
 
     # Выбор красных и чёрных узлов
     clr1 = False

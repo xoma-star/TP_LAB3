@@ -6,6 +6,8 @@ import numpy
 import matplotlib.pyplot
 import numpy as np
 from numba import jit
+from pybind import gzWrapper
+
 
 def DEBUG_ValuesOutput():
     # Вывод левой части СЛАУ
@@ -129,7 +131,7 @@ if __name__ == '__main__':
             print('---\nIn debug mode\n---')
             debug = True
     # Точность
-    eps = 1e-6
+    eps = 1e-3
     # Шаги сетки по осям
     step_x = 0.001
     step_y = 0.001
@@ -181,8 +183,8 @@ if __name__ == '__main__':
         DEBUG_ValuesOutput()
     print('Assigned all values. Beginning calculation\n\n\n')
     # Решение системы методом Гаусса-Зейделя
-    iter_num, u0, residual = GaussZeidel(u1, u0, black, red, f)
-    #iter_num, u0, u1, residual = gzWrapper.gauss_zeid_plus(u0, u1, red, black, f, n, ny, bnum, rnum, eps, a1, an, ai)
+    #iter_num, u0, residual = GaussZeidel(u1, u0, black, red, f)
+    iter_num, u0, u1, residual = gzWrapper.GaussZeidel(u0, u1, red, black, f, n, ny, bnum, rnum, eps, a1, an, ai)
 
     td = time.time() - td
 

@@ -18,11 +18,11 @@ ext_modules = [
 setup(
     name='gzWrapper',
     version='1.0.0',
-    author='Vladislav Afletunov',
-    author_email='onverx@gmail.com',
+    author='Vladimir Puteen',
+    author_email='',
     description='Example',
     ext_modules=ext_modules,
 )
 
 
-# & C:/Users/Nover/anaconda3/python.exe setup.py build_ext -i
+# python setup.py build_ext -i
