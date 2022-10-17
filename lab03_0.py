@@ -12,7 +12,7 @@ if __name__ == '__main__':
     step_x = 1e-3
     step_y = 1e-3
     # Размерности прямоугольной области
-    ix, jy = 0.2, 0.3
+    ix, jy = 0.1, 0.1
 
     print('Calculation started')
     td = time.time()
